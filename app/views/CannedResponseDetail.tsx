@@ -160,13 +160,7 @@ const CannedResponseDetail = ({ navigation, route }: ICannedResponseDetailProps)
 						</View>
 					</View>
 				</View>
-				<Button
-					title={I18n.t('Use')}
-					theme={theme}
-					style={styles.button}
-					type='primary'
-					onPress={() => navigateToRoom(cannedResponse)}
-				/>
+				<Button title={I18n.t('Use')} style={styles.button} type='primary' onPress={() => navigateToRoom(cannedResponse)} />
 			</ScrollView>
 		</SafeAreaView>
 	);

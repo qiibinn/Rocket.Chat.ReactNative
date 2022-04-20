@@ -191,7 +191,6 @@ class LoginView extends React.Component<ILoginViewProps, any> {
 					testID='login-view-submit'
 					loading={isFetching}
 					disabled={!this.valid()}
-					theme={theme}
 					style={styles.loginButton}
 				/>
 				{Accounts_PasswordReset && (
@@ -200,7 +199,6 @@ class LoginView extends React.Component<ILoginViewProps, any> {
 						type='secondary'
 						onPress={this.forgotPassword}
 						testID='login-view-forgot-password'
-						theme={theme}
 						color={themes[theme].auxiliaryText}
 						fontSize={14}
 					/>

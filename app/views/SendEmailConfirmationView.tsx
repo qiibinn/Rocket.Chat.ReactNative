@@ -83,7 +83,6 @@ const SendEmailConfirmationView = ({ navigation, route }: ISendEmailConfirmation
 					testID='send-email-confirmation-view-submit'
 					loading={isFetching}
 					disabled={invalidEmail}
-					theme={theme}
 				/>
 			</FormContainerInner>
 		</FormContainer>

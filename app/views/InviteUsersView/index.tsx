@@ -110,8 +110,8 @@ class InviteUsersView extends React.Component<IInviteUsersViewProps, any> {
 						<RCTextInput label={I18n.t('Invite_Link')} theme={theme} value={invite && invite.url} editable={false} />
 						{this.renderExpiration()}
 						<View style={[styles.divider, { backgroundColor: themes[theme].separatorColor }]} />
-						<Button title={I18n.t('Share_Link')} type='primary' onPress={this.share} theme={theme} />
-						<Button title={I18n.t('Edit_Invite')} type='secondary' onPress={this.edit} theme={theme} />
+						<Button title={I18n.t('Share_Link')} type='primary' onPress={this.share} />
+						<Button title={I18n.t('Edit_Invite')} type='secondary' onPress={this.edit} />
 					</View>
 				</ScrollView>
 			</SafeAreaView>

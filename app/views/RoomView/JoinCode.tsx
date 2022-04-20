@@ -102,18 +102,10 @@ const JoinCode = React.memo(
 								type='secondary'
 								style={styles.button}
 								backgroundColor={themes[theme].chatComponentBackground}
-								theme={theme}
 								testID='join-code-cancel'
 								onPress={hide}
 							/>
-							<Button
-								title={I18n.t('Join')}
-								type='primary'
-								style={styles.button}
-								theme={theme}
-								testID='join-code-submit'
-								onPress={joinRoom}
-							/>
+							<Button title={I18n.t('Join')} type='primary' style={styles.button} testID='join-code-submit' onPress={joinRoom} />
 						</View>
 					</View>
 				</View>
