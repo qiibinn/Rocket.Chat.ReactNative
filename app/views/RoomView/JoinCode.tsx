@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 import I18n from '../../i18n';
 import Button from '../../containers/Button';
 import TextInput from '../../containers/TextInput';
-import RocketChat from '../../lib/rocketchat';
 import sharedStyles from '../Styles';
 import { themes } from '../../lib/constants';
 import { IApplicationState } from '../../definitions';
+import { Services } from '../../lib/services';
 import { TSupportedThemes } from '../../theme';
 
 const styles = StyleSheet.create({
@@ -60,9 +60,9 @@ const JoinCode = React.memo(
 
 		const hide = () => setVisible(false);
 
-		const joinRoom = async () => {
+		const handleJoinRoom = async () => {
 			try {
-				await RocketChat.joinRoom(rid, code, t as any);
+				await Services.joinRoom(rid, code, t as any);
 				onJoin();
 				hide();
 			} catch (e) {
@@ -90,7 +90,7 @@ const JoinCode = React.memo(
 							returnKeyType='send'
 							autoCapitalize='none'
 							onChangeText={setCode}
-							onSubmitEditing={joinRoom}
+							onSubmitEditing={handleJoinRoom}
 							placeholder={I18n.t('Join_Code')}
 							secureTextEntry
 							error={error ? { error: 'error-code-invalid', reason: I18n.t('Code_or_password_invalid') } : undefined}
@@ -105,7 +105,7 @@ const JoinCode = React.memo(
 								testID='join-code-cancel'
 								onPress={hide}
 							/>
-							<Button title={I18n.t('Join')} type='primary' style={styles.button} testID='join-code-submit' onPress={joinRoom} />
+							<Button title={I18n.t('Join')} type='primary' style={styles.button} testID='join-code-submit' onPress={handleJoinRoom} />
 						</View>
 					</View>
 				</View>
